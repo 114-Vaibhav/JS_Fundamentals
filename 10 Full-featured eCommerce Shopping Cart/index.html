@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-featured eCommerce Shopping Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="bg-blue-600 text-white p-4 flex">
+        <h1>My eCommerce Store</h1>
+        <div id="cart-button" class="ml-auto">
+            <button id="cart-btn" class="bg-white text-blue-600 px-4 py-2 rounded right-0">
+                Cart (<span id="cart-count">0</span>)
+            </button>
+            <button id="products-btn" class="hidden bg-white text-blue-600 px-4 py-2 rounded right-0"> Products</button>
+        </div>
+    </header>
+    <main class="p-4">
+        <div id="cart" class="hidden p-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- LEFT: Products -->
+                <div id="cart-items" class="md:col-span-2 space-y-4">
+                    <!-- JS will insert products here -->
+                </div>
+
+                <!-- RIGHT: Summary -->
+                <div id="cart-summary" class="bg-white rounded-xl shadow p-6 h-fit">
+                    <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
+
+                    <div class="space-y-2 text-gray-700">
+                        <div class="flex justify-between">
+                            <span>Items Total</span>
+                            <span id="items-total">₹0</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span>Tax (2%)</span>
+                            <span id="tax">₹0</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span id="delivery">Delivery</span>
+                            <span id="delivery-value">₹30</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span>Platform Fee</span>
+                            <span id="platform-fee">₹0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Discount</span>
+                            <span id="discount">₹0</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="flex justify-between font-bold text-lg">
+                            <span>Total</span>
+                            <span id="grand-total">₹0</span>
+                        </div>
+                    </div>
+                    <label for="offer" class="mr-2">Apply Offer</label>
+                    <select id="offer" class="border p-2">
+                        <option value="" disabled selected>Select an offer</option>
+                        <option value="OFF100">Flat 100 Off</option>
+                        <option value="OFF200">Flat 200 Off</option>
+                    </select>
+                    <button class="w-full mt-6 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+                        Checkout
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <div id="products" class="grid">
+            <!-- Product List -->
+            <h2 class="text-xl font-bold mb-4">Products</h2>
+            <div id="search-filter" class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4">
+                <div id="filter" class="mb-4">
+                    <label for="category-filter" class="mr-2">Filter by Category:</label>
+                    <select id="category-filter" class="border p-2">
+                        <option value="all">All </option>
+                        <option value="mobile">Mobile</option>
+                        <option value="shirt">Men</option>
+                        <option value="girls_top">Women Tops</option>
+                        <option value="girls_suit">Women Suits</option>
+                    </select>
+                </div>
+                <div id="search">
+                    <label for="search-input" class="mr-2">Search:</label>
+                    <input type="text" id="search-input" class="border p-2" placeholder="Search products...">
+                </div>
+            </div>
+            <div id="product-list" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-200 p-4">
+        <p>&copy; 2026 My eCommerce Store. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
